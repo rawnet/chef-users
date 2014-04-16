@@ -18,6 +18,7 @@ node[:users].each do |name, conf|
       gid conf[:group] unless conf[:group].nil?
       password conf[:password]
       shell conf[:shell]
+      home home_dir
       action :create
     end
 
