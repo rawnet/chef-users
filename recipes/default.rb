@@ -7,8 +7,8 @@ node[:users].each do |name, conf|
       action :remove
     end
   else
-    
-    home_dir = "/home/#{name}"
+
+    home_dir = conf[:home] || "/home/#{name}"
 
     # Create the group
     group conf[:group] unless conf[:group].nil?
